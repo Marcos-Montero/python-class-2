@@ -1,4 +1,26 @@
-# Crea una clase `Pokemon` con los atributos `name`, `type`, `hp` y `attack`.
+# 2. Crea un diccionario llamado `person` con las siguientes claves: `name`, `age`, y `city`. 
+# Asigna valores apropiados a cada clave
+person = {
+    "name": "ferney_prito",
+    "age": 27,
+    "city": "bogota"
+}
+print(person["name"])
+
+
+
+
+# 3. Crea una lista llamada `colors` con los siguientes colores: `red`, `green`, `blue`, `yellow`, y `purple`.
+# Luego imprime usando un bucle `for` cada color en la lista.
+from turtle import color
+
+
+colors = ["red","green","blue","yellow","purple"]
+for color in colors:
+    print(color)
+    
+
+# 4. Crea una clase `Pokemon` con los atributos `name`, `type`, `hp` y `attack`.
 # añade el método attack, quita hp al pokemon objetivo, en base a attack del pokemon atacante
 # añade el método `faint`, que imprime un mensaje cuando el pokemon objetivo tiene 0 hp. (al finalizar el método attack llamaremos al target.faint())
 
@@ -45,16 +67,3 @@ dragonite = furia_nocturna("dragonite", "flying", 100, 50)
 dinosaurio = furia_nocturna("dinosaurio", "rock", 100, 50)
 
 dragonite.attack(dinosaurio)
-
-
-
-
-
-
-
-
-
-
-
-
-                    

@@ -6,7 +6,6 @@
 
 #Añade el atrivuto 'defense', que resta attack en base al attack del pokemon atacante
 #Añade el atributo 'recover_health', que suma puntos de hp, en base al desempeño en ataques
-
 class Pokemon:
     def __init__(self,name,type,hp,attack_power,defense_power):
         self.name = name
@@ -26,6 +25,7 @@ class Pokemon:
     
         if target.hp <= 0:
             target.faint()
+            print(f'\n{target.name} loses, {self.name} wins\n')
         else:
             print(f'{target.name} has {target.hp} health points left')
 
@@ -35,14 +35,72 @@ class Pokemon:
 
     def faint(self):
         if self.hp <= 0:
-            print(f'{self.name} has fainted!')    
+            print(f'\n{self.name} has fainted!\n')    
 
-venusaur = Pokemon('Venusaur','grass/poison',80,100,76)
-charizard = Pokemon('Charizard','fire/flying',78,99,82)
-blastoise = Pokemon('Blastoise','water',79,103,98)
-golem = Pokemon('Golem','rock/electric',80,120,95)
+'Team Ash'
+venusaur = Pokemon('Venusaur','grass/poison',190,110,76)
+charizard = Pokemon('Charizard','fire/flying',190,99,82)
+
+'Team Rocket'
+blastoise = Pokemon('Blastoise','water',200,103,98)
+golem = Pokemon('Golem','rock/electric',186,120,78)
+
+print('''---First Combat Round---
+        Ash: Golem I summon you!!
+        Team Rocket: Venusaur to the game!!\n''')
+
 
 venusaur.attack(golem)
-venusaur.attack(charizard)
+golem.attack(venusaur)
+
+
+print('''\n---Recovery Time---
+        Team Rocket: Venusaur superglue health elixir
+        Ash: Golem health meditating recovering tecnique
+   \n''')
+
+
+venusaur.recover_health(15)
+golem.recover_health(15)
+
+
+print('''\n---Second Combat Round---
+        Ash: Here we go again!!
+          Rocket Team: Bring it on!!\n''')
+
+
+golem.attack(venusaur)
+golem.attack(venusaur)
+
+
+
+print('''\n---Rocket Team: They hit us twice, we need to attack!!!---\n''')
+
+
+venusaur.attack(golem)
+venusaur.attack(golem)
+venusaur.attack(golem)
+
+
+
+print('''\n---Announcer: Rocket Team has Ash team against the ropes---\n''')
+print('''\n***Last Round---Fight till exhaustion---***\n''')
+
+
+while golem.hp > 0 and venusaur.hp > 0:
+    venusaur.attack(golem)
+    if golem.hp <= 0:
+        break
+    golem.attack(venusaur)
+    if venusaur.hp <=0:
+        break
+ 
+
+
+
+
+
+
+
 
 

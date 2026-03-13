@@ -24,3 +24,4 @@ pikachu = Pokemon("Pikachu", "electric", 100, 50)
 charizard = Pokemon("Charizard", "fire", 100, 50)
 
 pikachu.attack(charizard)
+

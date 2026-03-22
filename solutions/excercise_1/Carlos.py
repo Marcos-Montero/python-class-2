@@ -2,3 +2,4 @@
 
 # 1. Crea una variable llamada `name` y asígnale tu nombre como una cadena de texto.
 name="carlos"
+print(name)
